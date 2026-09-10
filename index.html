@@ -4,57 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>Leily | لايلي</title>
+    <title>Leily</title>
 
     <style>
-
-        :root {
-            --pink-main: #f8dfe5;
-            --pink-soft: #fcecef;
-            --pink-light: #fff5f7;
-            --pink-dark: #c98999;
-
-            --cream: #fffaf5;
-            --cream-dark: #f7eee7;
-
-            --white: #ffffff;
-
-            --text-main: #4d4144;
-            --text-soft: #8b7b80;
-            --border: #eee2e4;
-
-            --shadow-soft: 0 4px 18px rgba(92, 67, 73, 0.07);
-            --shadow-card: 0 5px 20px rgba(92, 67, 73, 0.08);
-
-            --radius-small: 12px;
-            --radius-medium: 18px;
-            --radius-large: 24px;
-        }
-
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --pink: #f8dfe5;
+            --pink-dark: #d99eae;
+            --pink-soft: #fdf0f3;
+            --cream: #fffaf5;
+            --white: #ffffff;
+            --beige: #f4ebe3;
+            --text: #3f3838;
+            --muted: #8b8080;
+            --border: #eee1dc;
+            --shadow: 0 5px 18px rgba(70, 45, 45, 0.08);
         }
 
         body {
-            min-height: 100vh;
+            font-family: Arial, "Segoe UI", sans-serif;
             background: var(--cream);
-            color: var(--text-main);
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Tahoma,
-                Arial,
-                sans-serif;
-            overflow-x: hidden;
+            color: var(--text);
+            min-height: 100vh;
         }
 
         button,
@@ -67,430 +43,266 @@
             cursor: pointer;
         }
 
-        img {
-            display: block;
-            width: 100%;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =========================================================
-           APP
-           ========================================================= */
-
         .app {
             width: 100%;
             max-width: 700px;
-            min-height: 100vh;
             margin: 0 auto;
+            min-height: 100vh;
             background: var(--cream);
-            padding-bottom: 90px;
         }
 
-
-        /* =========================================================
-           HEADER
-           ========================================================= */
+        /* Header */
 
         .header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255, 250, 245, 0.96);
+            background: rgba(255, 250, 245, 0.97);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 14px 15px 10px;
-            border-bottom: 1px solid rgba(238, 226, 228, 0.7);
+            padding: 15px 15px 10px;
+            border-bottom: 1px solid var(--border);
         }
 
         .top-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: 10px;
+            margin-bottom: 13px;
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #665258;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #4a4141;
+            white-space: nowrap;
         }
 
         .logo span {
-            color: inherit;
-        }
-
-        .top-actions {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            color: #d99eae;
         }
 
         .language-button {
-            height: 38px;
-            padding: 0 12px;
-            border-radius: 20px;
             background: var(--white);
-            color: #75656a;
             border: 1px solid var(--border);
-            box-shadow: var(--shadow-soft);
-            font-size: 12px;
-            font-weight: 600;
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            box-shadow: var(--shadow);
         }
 
-        .language-button:active {
-            transform: scale(0.95);
-        }
-
-        .saved-header-button {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: var(--white);
-            box-shadow: var(--shadow-soft);
+        .search-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #9d747f;
-            transition: transform 0.2s ease;
+            gap: 9px;
         }
 
-        .saved-header-button:active {
-            transform: scale(0.9);
-        }
-
-
-        /* =========================================================
-           SEARCH
-           ========================================================= */
-
-        .search-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .search-input {
-            width: 100%;
-            height: 48px;
-            border: 1px solid var(--border);
-            border-radius: 25px;
+        .search-box {
+            flex: 1;
+            height: 46px;
             background: var(--white);
-            padding: 0 48px 0 18px;
-            color: var(--text-main);
-            font-size: 15px;
-            outline: none;
-            box-shadow: var(--shadow-soft);
-            transition:
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-        .search-input:focus {
-            border-color: var(--pink-main);
-            box-shadow: 0 0 0 3px rgba(248, 223, 229, 0.35);
-        }
-
-        .search-input::placeholder {
-            color: #b1a4a8;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 13px;
+            box-shadow: var(--shadow);
         }
 
         .search-icon {
-            position: absolute;
-            right: 17px;
-            top: 50%;
-            transform: translateY(-50%);
             font-size: 19px;
-            color: #a18d93;
-            pointer-events: none;
+            margin-inline-end: 8px;
         }
 
-
-        /* =========================================================
-           CATEGORIES
-           ========================================================= */
-
-        .categories-wrapper {
-            overflow-x: auto;
-            scrollbar-width: none;
-            padding-top: 12px;
-            padding-bottom: 3px;
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: var(--text);
+            font-size: 14px;
         }
 
-        .categories-wrapper::-webkit-scrollbar {
-            display: none;
+        .search-box input::placeholder {
+            color: #aaa0a0;
         }
+
+        .saved-button {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            border-radius: 15px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            font-size: 21px;
+            color: #b98292;
+        }
+
+        /* Categories */
 
         .categories {
             display: flex;
             gap: 8px;
-            width: max-content;
+            overflow-x: auto;
+            padding: 5px 2px 4px;
+            scrollbar-width: none;
         }
 
-        .category-button {
-            padding: 9px 15px;
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category {
+            flex: 0 0 auto;
+            padding: 9px 14px;
             border-radius: 20px;
             background: var(--white);
-            color: var(--text-soft);
+            color: #706666;
             border: 1px solid var(--border);
             font-size: 13px;
             white-space: nowrap;
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
         }
 
-        .category-button.active {
-            background: var(--pink-main);
-            color: #6b4f57;
-            border-color: var(--pink-main);
-            font-weight: 600;
+        .category.active {
+            background: var(--pink);
+            color: #5d484d;
+            border-color: var(--pink);
+            font-weight: bold;
         }
 
-        .category-button:active {
-            transform: scale(0.96);
-        }
+        /* Main */
 
-
-        /* =========================================================
-           MAIN
-           ========================================================= */
-
-        .main {
-            padding: 18px 14px 0;
+        main {
+            padding: 15px;
         }
 
         .section-heading {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 12px;
+            align-items: center;
+            margin: 5px 2px 13px;
         }
 
-        .section-title {
+        .section-heading h2 {
             font-size: 18px;
-            font-weight: 700;
-            color: #5a4b50;
+            color: #443b3b;
         }
 
-        .section-subtitle {
+        .section-heading span {
             font-size: 12px;
-            color: var(--text-soft);
+            color: var(--muted);
         }
 
+        /* Product Grid */
 
-        /* =========================================================
-           FEATURED
-           ========================================================= */
-
-        .featured-section {
-            margin-bottom: 24px;
-        }
-
-        .featured-grid {
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 11px;
-        }
-
-        .featured-card {
-            position: relative;
-            background: var(--white);
-            border-radius: var(--radius-medium);
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-            animation: featuredFade 0.45s ease;
-        }
-
-        .featured-card.pinned {
-            border: 2px solid var(--pink-main);
-        }
-
-        .featured-card .product-image-container {
-            aspect-ratio: 0.82;
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: 9px;
-            right: 9px;
-            z-index: 5;
-            padding: 5px 9px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.92);
-            color: #a56e7d;
-            font-size: 10px;
-            font-weight: 700;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-        }
-
-        .pinned-badge {
-            position: absolute;
-            top: 9px;
-            left: 9px;
-            z-index: 5;
-            padding: 5px 9px;
-            border-radius: 15px;
-            background: var(--pink-main);
-            color: #6d5058;
-            font-size: 10px;
-            font-weight: 700;
-        }
-
-        @keyframes featuredFade {
-
-            from {
-                opacity: 0.25;
-                transform: translateY(5px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        /* =========================================================
-           PRODUCTS
-           ========================================================= */
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px 11px;
+            gap: 12px;
+            align-items: start;
         }
 
         .product-card {
-            position: relative;
-            min-width: 0;
             background: var(--white);
-            border-radius: var(--radius-medium);
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: var(--shadow-card);
-            transition: transform 0.2s ease;
-        }
-
-        .product-card:active {
-            transform: scale(0.985);
-        }
-
-        .product-image-container {
+            box-shadow: var(--shadow);
+            border: 1px solid #f0e7e3;
             position: relative;
-            width: 100%;
-            aspect-ratio: 0.82;
-            background: var(--pink-light);
-            overflow: hidden;
         }
 
         .product-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            aspect-ratio: 0.82;
+            background: var(--beige);
+            overflow: hidden;
+            position: relative;
         }
 
-        .heart-button {
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .heart {
             position: absolute;
             top: 9px;
-            left: 9px;
+            inset-inline-end: 9px;
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.93);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: rgba(255, 255, 255, 0.92);
+            color: #ad7d89;
             font-size: 18px;
-            color: #987b83;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            z-index: 4;
-            transition:
-                transform 0.2s ease,
-                color 0.2s ease;
+            z-index: 2;
         }
 
-        .heart-button.saved {
-            color: #d4778b;
-        }
-
-        .heart-button:active {
-            transform: scale(0.82);
+        .badge {
+            position: absolute;
+            top: 9px;
+            inset-inline-start: 9px;
+            padding: 5px 8px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.92);
+            color: #9d6979;
+            font-size: 10px;
+            font-weight: bold;
         }
 
         .product-info {
-            padding: 10px 10px 12px;
+            padding: 11px;
         }
 
         .product-name {
             font-size: 14px;
-            font-weight: 600;
-            line-height: 1.4;
-            color: #514449;
+            font-weight: 700;
+            line-height: 1.35;
             margin-bottom: 5px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .product-price {
-            font-size: 14px;
-            font-weight: 700;
-            color: #a96f7c;
-            margin-bottom: 5px;
+            font-size: 15px;
+            font-weight: 800;
+            color: #a66f7e;
+            margin-bottom: 7px;
         }
 
-        .seller-name {
+        .seller {
+            display: flex;
+            align-items: center;
+            gap: 5px;
             font-size: 11px;
-            color: var(--text-soft);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            color: var(--muted);
         }
 
+        .verified {
+            font-size: 12px;
+        }
 
-        /* =========================================================
-           EMPTY STATE
-           ========================================================= */
+        /* Empty state */
 
-        .empty-state {
+        .empty {
             display: none;
             text-align: center;
-            padding: 45px 20px;
-            color: var(--text-soft);
-        }
-
-        .empty-state.show {
-            display: block;
+            padding: 50px 20px;
+            color: var(--muted);
         }
 
         .empty-icon {
-            font-size: 42px;
-            margin-bottom: 10px;
-            opacity: 0.65;
+            font-size: 40px;
+            margin-bottom: 12px;
         }
 
-        .empty-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 5px;
+        /* Bottom navigation */
+
+        .bottom-space {
+            height: 80px;
         }
-
-        .empty-text {
-            font-size: 13px;
-        }
-
-
-        /* =========================================================
-           BOTTOM NAVIGATION
-           ========================================================= */
 
         .bottom-nav {
             position: fixed;
@@ -499,310 +311,462 @@
             transform: translateX(-50%);
             width: 100%;
             max-width: 700px;
-            height: 68px;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            height: 67px;
+            background: rgba(255, 250, 245, 0.97);
+            backdrop-filter: blur(12px);
             border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            z-index: 200;
-            padding-bottom: env(safe-area-inset-bottom);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 90;
         }
 
-        .nav-button {
+        .nav-item {
             background: transparent;
+            color: #8b8080;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 4px;
-            color: #9b8b90;
             font-size: 10px;
         }
 
-        .nav-icon {
-            font-size: 20px;
-            line-height: 1;
+        .nav-item .nav-icon {
+            font-size: 21px;
         }
 
-        .nav-button.active {
-            color: #a66d7c;
-            font-weight: 600;
+        .nav-item.active {
+            color: #b77e8c;
+            font-weight: bold;
         }
 
+        /* Responsive */
 
-        /* =========================================================
-           TOAST
-           ========================================================= */
-
-        .toast {
-            position: fixed;
-            left: 50%;
-            bottom: 84px;
-            transform: translateX(-50%) translateY(20px);
-            background: #5b4b51;
-            color: white;
-            padding: 10px 17px;
-            border-radius: 22px;
-            font-size: 12px;
-            opacity: 0;
-            pointer-events: none;
-            z-index: 500;
-            transition:
-                opacity 0.25s ease,
-                transform 0.25s ease;
-            white-space: nowrap;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-
-        /* =========================================================
-           RESPONSIVE
-           ========================================================= */
-
-        @media (min-width: 550px) {
-
-            .featured-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .products-grid {
+        @media (min-width: 520px) {
+            .product-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
-
-        @media (max-width: 360px) {
-
-            .app {
-                padding-bottom: 85px;
-            }
-
-            .main {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-
-            .products-grid,
-            .featured-grid {
-                gap: 9px;
-            }
-
-            .product-info {
-                padding: 8px;
-            }
-
-            .product-name {
-                font-size: 13px;
-            }
-
-            .product-price {
-                font-size: 13px;
-            }
-        }
-
     </style>
 </head>
 
-
 <body>
 
-    <div class="app">
+<div class="app">
 
+    <header class="header">
 
-        <!-- =====================================================
-             HEADER
-             ====================================================== -->
-
-        <header class="header">
-
-            <div class="top-row">
-
-                <div class="logo">
-                    Leily
-                </div>
-
-
-                <div class="top-actions">
-
-                    <button
-                        class="language-button"
-                        id="languageButton"
-                        aria-label="Change language">
-                        English
-                    </button>
-
-
-                    <button
-                        class="saved-header-button"
-                        id="savedHeaderButton"
-                        aria-label="المحفوظات">
-                        ♡
-                    </button>
-
-                </div>
-
+        <div class="top-row">
+            <div class="logo">
+                Lei<span>ly</span>
             </div>
 
+            <button class="language-button" id="languageButton">
+                English
+            </button>
+        </div>
 
-            <!-- SEARCH -->
+        <div class="search-row">
 
-            <div class="search-container">
-
-                <span class="search-icon">
-                    ⌕
-                </span>
-
+            <div class="search-box">
+                <span class="search-icon">⌕</span>
                 <input
+                    type="text"
                     id="searchInput"
-                    class="search-input"
-                    type="search"
-                    placeholder="ابحثي عن تنورة، ثوب، حذاء، حقيبة..."
+                    placeholder="ابحثي عن تنورة، حقيبة، كوب لطيف..."
                     autocomplete="off"
-                    enterkeyhint="search"
                 >
-
             </div>
 
+            <button
+                class="saved-button"
+                id="savedButton"
+                aria-label="Saved products"
+            >
+                ♡
+            </button>
 
-            <!-- CATEGORIES -->
+        </div>
 
-            <div class="categories-wrapper">
+        <div class="categories" id="categories">
 
-                <div class="categories">
+            <button class="category active" data-category="all">
+                الكل
+            </button>
 
-                    <button
-                        class="category-button active"
-                        data-category="all">
-                        الكل
-                    </button>
+            <button class="category" data-category="skirts">
+                تنورات
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="skirts">
-                        تنورات
-                    </button>
+            <button class="category" data-category="shoes">
+                أحذية
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="shoes">
-                        أحذية
-                    </button>
+            <button class="category" data-category="jeans">
+                جينز
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="jeans">
-                        جينز
-                    </button>
+            <button class="category" data-category="bags">
+                حقائب
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="bags">
-                        حقائب
-                    </button>
+            <button class="category" data-category="pants">
+                سراويل
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="pants">
-                        سراويل
-                    </button>
+            <button class="category" data-category="kids">
+                أطفال
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="kids">
-                        أطفال
-                    </button>
+            <button class="category" data-category="accessories">
+                إكسسوارات
+            </button>
 
-                    <button
-                        class="category-button"
-                        data-category="accessories">
-                        إكسسوارات
-                    </button>
+        </div>
 
-                </div>
-
-            </div>
-
-        </header>
+    </header>
 
 
-        <!-- =====================================================
-             MAIN
-             ====================================================== -->
+    <main>
 
-        <main class="main">
+        <div class="section-heading">
+            <h2 id="sectionTitle">منتجات مختارة لكِ</h2>
+            <span id="productCount"></span>
+        </div>
 
+        <div class="product-grid" id="productGrid"></div>
 
-            <!-- FEATURED -->
+        <div class="empty" id="emptyState">
+            <div class="empty-icon">♡</div>
+            <div id="emptyText">لم نجد منتجات مطابقة.</div>
+        </div>
 
-            <section class="featured-section">
+        <div class="bottom-space"></div>
 
-                <div class="section-heading">
+    </main>
 
-                    <div>
-
-                        <h2
-                            class="section-title"
-                            id="featuredTitle">
-                            مميز لكِ ✨
-                        </h2>
-
-                        <p
-                            class="section-subtitle"
-                            id="featuredSubtitle">
-                            منتجات مميزة من البائعات
-                        </p>
-
-                    </div>
-
-                    <span
-                        class="section-subtitle"
-                        id="featuredCounter">
-                    </span>
-
-                </div>
+</div>
 
 
-                <div
-                    class="featured-grid"
-                    id="featuredGrid">
-                </div>
+<nav class="bottom-nav">
 
-            </section>
+    <button class="nav-item active">
+        <span class="nav-icon">⌂</span>
+        <span id="navHome">الرئيسية</span>
+    </button>
 
+    <button class="nav-item">
+        <span class="nav-icon">♡</span>
+        <span id="navSaved">المحفوظات</span>
+    </button>
 
-            <!-- NORMAL PRODUCTS -->
+    <button class="nav-item">
+        <span class="nav-icon">◯</span>
+        <span id="navAccount">الحساب</span>
+    </button>
 
-            <section>
-
-                <div class="section-heading">
-
-                    <h2
-                        class="section-title"
-                        id="productsTitle">
-                        اكتشفي المنتجات
-                    </h2>
-
-                    <span
-                        class="section-subtitle"
-                        id="productCount">
-                    </span>
-
-                </div>
+</nav>
 
 
-                <div
-                    class="products-grid"
-                    id="productsGrid">
-                </div>
+<script>
+
+    /* =========================
+       LEILY MOCK DATABASE
+       ========================= */
+
+    const normalProducts = [
+
+        {
+            id: 1,
+            nameAr: "تنورة كارو ناعمة",
+            nameEn: "Soft Plaid Skirt",
+            price: 3500,
+            colors: ["بيج", "بني"],
+            sizes: ["S", "M", "L"],
+            quantity: 8,
+            seller: "Lina Closet",
+            verified: true,
+            category: "skirts",
+            keywords: ["تنورة", "كارو", "skirt", "plaid"],
+            image: "https://images.unsplash.com/photo-1583496661160-fb5886a13d27?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 2,
+            nameAr: "حذاء باليه وردي",
+            nameEn: "Pink Ballet Shoes",
+            price: 4200,
+            colors: ["وردي", "أبيض"],
+            sizes: ["36", "37", "38", "39"],
+            quantity: 5,
+            seller: "Mimi Store",
+            verified: true,
+            category: "shoes",
+            keywords: ["حذاء", "باليه", "وردي", "shoes"],
+            image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 3,
+            nameAr: "جينز واسع فاتح",
+            nameEn: "Light Wide Jeans",
+            price: 4800,
+            colors: ["أزرق فاتح"],
+            sizes: ["36", "38", "40", "42"],
+            quantity: 11,
+            seller: "Daily Denim",
+            verified: false,
+            category: "jeans",
+            keywords: ["جينز", "سروال", "jeans", "wide"],
+            image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 4,
+            nameAr: "حقيبة سوداء صغيرة",
+            nameEn: "Small Black Bag",
+            price: 3900,
+            colors: ["أسود"],
+            sizes: ["واحد"],
+            quantity: 4,
+            seller: "Noor Bags",
+            verified: true,
+            category: "bags",
+            keywords: ["حقيبة", "سوداء", "bag", "black"],
+            image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 5,
+            nameAr: "بنطال واسع كريمي",
+            nameEn: "Cream Wide Pants",
+            price: 4400,
+            colors: ["كريمي", "بيج"],
+            sizes: ["S", "M", "L"],
+            quantity: 7,
+            seller: "Soft Line",
+            verified: false,
+            category: "pants",
+            keywords: ["بنطال", "سروال", "كريمي", "pants"],
+            image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 6,
+            nameAr: "قلادة فراشة لطيفة",
+            nameEn: "Cute Butterfly Necklace",
+            price: 1800,
+            colors: ["فضي", "ذهبي"],
+            sizes: ["واحد"],
+            quantity: 15,
+            seller: "Little Things",
+            verified: true,
+            category: "accessories",
+            keywords: ["قلادة", "فراشة", "إكسسوار", "necklace"],
+            image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 7,
+            nameAr: "سترة صوفية ناعمة",
+            nameEn: "Soft Knit Sweater",
+            price: 3500,
+            colors: ["وردي", "كريمي"],
+            sizes: ["S", "M", "L"],
+            quantity: 6,
+            seller: "Lina Closet",
+            verified: true,
+            category: "clothes",
+            keywords: ["سترة", "صوف", "وردي", "sweater"],
+            image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 8,
+            nameAr: "كوب لطيف",
+            nameEn: "Cute Mug",
+            price: 1600,
+            colors: ["أبيض", "وردي"],
+            sizes: ["واحد"],
+            quantity: 9,
+            seller: "Cute Corner",
+            verified: false,
+            category: "other",
+            keywords: ["كوب", "لطيف", "mug", "cute"],
+            image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80"
+        }
+
+    ];
 
 
-                <div
-                    class="empty-state"
-                    id="emptyState">
+    const featuredProducts = [
 
-               
+        {
+            id: 101,
+            nameAr: "تنورة لوليتا سوداء",
+            nameEn: "Black Lolita Skirt",
+            price: 6200,
+            colors: ["أسود"],
+            sizes: ["S", "M", "L"],
+            quantity: 3,
+            seller: "Moon Closet",
+            verified: true,
+            category: "skirts",
+            keywords: ["تنورة", "لوليتا", "أسود", "lolita"],
+            image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 102,
+            nameAr: "حقيبة وردية صغيرة",
+            nameEn: "Mini Pink Bag",
+            price: 5200,
+            colors: ["وردي"],
+            sizes: ["واحد"],
+            quantity: 5,
+            seller: "Pink Room",
+            verified: true,
+            category: "bags",
+            keywords: ["حقيبة", "وردي", "bag", "pink"],
+            image: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 103,
+            nameAr: "حذاء ماري جين",
+            nameEn: "Mary Jane Shoes",
+            price: 6900,
+            colors: ["أسود", "بني"],
+            sizes: ["36", "37", "38", "39"],
+            quantity: 4,
+            seller: "Daisy Shoes",
+            verified: true,
+            category: "shoes",
+            keywords: ["حذاء", "ماري جين", "mary jane", "shoes"],
+            image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 104,
+            nameAr: "حلوى فراولة",
+            nameEn: "Strawberry Sweets",
+            price: 1200,
+            colors: ["وردي"],
+            sizes: ["واحد"],
+            quantity: 20,
+            seller: "Sweet Day",
+            verified: false,
+            category: "other",
+            keywords: ["حلويات", "فراولة", "حلوى", "strawberry", "sweets"],
+            image: "https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&w=700&q=80"
+        },
+
+        {
+            id: 105,
+            nameAr: "ستيكرات كيوت",
+            nameEn: "Cute Stickers",
+            price: 900,
+            colors: ["متعدد"],
+            sizes: ["واحد"],
+            quantity: 30,
+            seller: "Sticker Land",
+            verified: true,
+            category: "other",
+            keywords: ["ستيكر", "ستيكرات", "cute", "stickers"],
+            image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80"
+        }
+
+    ];
+
+
+    const pinnedProducts = [
+
+        {
+            id: 201,
+            nameAr: "فستان وردي مميز",
+            nameEn: "Featured Pink Dress",
+            price: 7500,
+            colors: ["وردي فاتح"],
+            sizes: ["S", "M", "L"],
+            quantity: 2,
+            seller: "Rose Atelier",
+            verified: true,
+            category: "clothes",
+            keywords: ["فستان", "وردي", "dress", "pink"],
+            image: "https://images.unsplash.com/photo-1572804013427-4d7ca7268217?auto=format&fit=crop&w=700&q=80"
+        }
+
+    ];
+
+
+    /* =========================
+       STATE
+       ========================= */
+
+    let currentLanguage = "ar";
+    let currentCategory = "all";
+    let currentSearch = "";
+
+    let savedProducts = [];
+
+    let featuredRotationIndex = 0;
+
+    let visibleFeatured = [];
+
+
+    /* =========================
+       TRANSLATIONS
+       ========================= */
+
+    const translations = {
+
+        ar: {
+            languageButton: "English",
+            searchPlaceholder: "ابحثي عن تنورة، حقيبة، كوب لطيف...",
+            sectionTitle: "منتجات مختارة لكِ",
+            all: "الكل",
+            skirts: "تنورات",
+            shoes: "أحذية",
+            jeans: "جينز",
+            bags: "حقائب",
+            pants: "سراويل",
+            kids: "أطفال",
+            accessories: "إكسسوارات",
+            home: "الرئيسية",
+            saved: "المحفوظات",
+            account: "الحساب",
+            empty: "لم نجد منتجات مطابقة.",
+            verified: "موثق",
+            unverified: "غير موثق",
+            featured: "مميز",
+            pinned: "مثبت",
+            products: "منتجات"
+        },
+
+        en: {
+            languageButton: "العربية",
+            searchPlaceholder: "Search skirts, bags, cute mugs...",
+            sectionTitle: "Products picked for you",
+            all: "All",
+            skirts: "Skirts",
+            shoes: "Shoes",
+            jeans: "Jeans",
+            bags: "Bags",
+            pants: "Pants",
+            kids: "Kids",
+            accessories: "Accessories",
+            home: "Home",
+            saved: "Saved",
+            account: "Account",
+            empty: "No matching products found.",
+            verified: "Verified",
+            unverified: "Not verified",
+            featured: "Featured",
+            pinned: "Pinned",
+            products: "products"
+        }
+
+    };
+
+
+ 
